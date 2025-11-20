@@ -1,5 +1,6 @@
 {
   "name": "bayu",
+  "homepage": "https://bayuupermana.github.io/Bayu",
   "module": "index.tsx",
   "type": "module",
   "private": true,
