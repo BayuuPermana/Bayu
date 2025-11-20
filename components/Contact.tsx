@@ -23,7 +23,6 @@ const Contact = () => {
 
                 <div className="flex justify-center gap-8 text-gray-500">
                     <a href="https://x.com/4beyu" className="hover:text-white transition-colors"><Twitter size={24} /></a>
-                    <a href="https://github.com/BayuuPermana" className="hover:text-white transition-colors"><Github size={24} /></a>
                     <a href="https://instagram.com/bayu_permanayogaa" className="hover:text-white transition-colors"><Instagram size={24} /></a>
                 </div>
 
