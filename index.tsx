@@ -34,7 +34,7 @@ const Portfolio = () => {
             <About />
             <TechStack />
             <Projects />
-            <Contact />
+            {/* <Contact /> */}
         </div>
     );
 };
