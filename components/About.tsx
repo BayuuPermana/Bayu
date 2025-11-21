@@ -7,9 +7,9 @@ const About = () => {
             <div className="container mx-auto px-6">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
                     <div className="relative group">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                        <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                         <div className="relative bg-[#111] border border-white/10 rounded-2xl p-8 md:p-12">
-                            <Code2 className="w-12 h-12 text-purple-400 mb-6" />
+                            <Code2 className="w-12 h-12 text-green-400 mb-6" />
                             <h3 className="text-2xl font-bold mb-4">The Hybrid Advantage</h3>
                             <p className="text-gray-400 leading-relaxed mb-6">
                                 In a world where data is the new oil, purely functional apps aren't enough. My background combines the analytical rigor of a <strong>Data Analyst</strong> with the creative engineering of a <strong>Full Stack Developer</strong>.

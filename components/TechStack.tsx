@@ -20,9 +20,9 @@ const TechStack = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {Object.entries(skills).map(([category, data]) => (
-                        <div key={category} className="bg-white/5 border border-white/5 rounded-2xl p-6 hover:border-purple-500/30 transition-colors group">
+                        <div key={category} className="bg-white/5 border border-white/5 rounded-2xl p-6 hover:border-blue-500/30 transition-colors group">
                             <div className="flex items-center gap-3 mb-6">
-                                <div className="p-2 bg-white/10 rounded-lg text-purple-300 group-hover:text-purple-400 transition-colors">
+                                <div className="p-2 bg-white/10 rounded-lg text-blue-300 group-hover:text-blue-400 transition-colors">
                                     {data.icon}
                                 </div>
                                 <h3 className="text-xl font-semibold">{category}</h3>

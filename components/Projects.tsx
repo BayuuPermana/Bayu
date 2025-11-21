@@ -36,7 +36,7 @@ const Projects = () => {
                             A selection of my recent work, ranging from financial tools to data analysis notebooks.
                         </p>
                     </div>
-                    <a href="https://github.com/BayuuPermana?tab=repositories" className="text-purple-400 hover:text-purple-300 flex items-center gap-2 group">
+                    <a href="https://github.com/BayuuPermana?tab=repositories" className="text-pink-400 hover:text-pink-300 flex items-center gap-2 group">
                         View all repositories <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
                     </a>
                 </div>

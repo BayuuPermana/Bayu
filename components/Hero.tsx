@@ -9,17 +9,17 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
     return (
         <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
             {/* Background Glows */}
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[128px]" />
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-600/20 rounded-full blur-[128px]" />
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[128px]" />
 
             <div className="container mx-auto px-6 relative z-10 text-center">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-sm mb-8 animate-fade-in-up">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-300 text-sm mb-8 animate-fade-in-up">
                     <Sparkles size={14} />
                     <span>Open to Work & Collaboration</span>
                 </div>
 
                 <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
-                    Bridging <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Data</span> and <br className="hidden md:block" />
+                    Bridging <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-300">Data</span> and <br className="hidden md:block" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Development</span>
                 </h1>
 

@@ -10,7 +10,7 @@ const Navigation: React.FC<NavigationProps> = ({ isScrolled, scrollToSection }) 
     return (
         <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6'}`}>
             <div className="container mx-auto px-6 flex justify-between items-center">
-                <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent cursor-pointer" onClick={() => scrollToSection('home')}>
+                <div className="text-2xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent cursor-pointer" onClick={() => scrollToSection('home')}>
                     Bayuu<span className="text-white">Permana</span>
                 </div>
                 <div className="hidden md:flex gap-8 text-sm font-medium text-gray-400">
@@ -18,7 +18,7 @@ const Navigation: React.FC<NavigationProps> = ({ isScrolled, scrollToSection }) 
                         <button
                             key={item}
                             onClick={() => scrollToSection(item.toLowerCase())}
-                            className="hover:text-purple-400 transition-colors uppercase tracking-wider"
+                            className="hover:text-green-400 transition-colors uppercase tracking-wider"
                         >
                             {item}
                         </button>
