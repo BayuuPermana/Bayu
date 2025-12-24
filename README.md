@@ -1,37 +1,66 @@
-👨‍💻 Bayu Permana - Personal Portfolio
+# 👨‍💻 Bayu Permana - Personal Portfolio
 
 A modern, responsive, and aesthetic personal portfolio website designed to showcase my work as a Data Analyst and Full-Stack Developer. This project serves as a central hub for my skills, projects, and professional background, bridging the gap between data science and software engineering.
 
-🚀 Purpose
+🚀 **Live Demo:** [bayuupermana.github.io/Bayu/](https://bayuupermana.github.io/Bayu/)
 
-The primary purpose of this repository is to:
+---
 
-Showcase Projects: detailed overview of my key repositories like FinTrack, Emp-Dash, and WaterMonitoring.
+## ✨ Features
 
-Highlight Skills: A visual representation of my tech stack, ranging from Python/Data Analysis to SPA Architecture.
+-   **🌓 Light & Dark Mode:** Fully dynamic theme switching with persistence (`localStorage`).
+-   **📱 Responsive & Fluid:** Optimized for all screen sizes with a mobile-first approach.
+-   **⚡ SPA Architecture:** Smooth, client-side navigation powered by React.
+-   **🎨 Premium Aesthetic:** Modern UI with glassmorphism, gradient accents, and subtle animations.
+-   **🛠️ Tech Stack:**
+    -   **Runtime:** [Bun](https://bun.sh/)
+    -   **Framework:** [React 18](https://react.dev/)
+    -   **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+    -   **Build Tool:** [Vite](https://vitejs.dev/)
+    -   **Icons:** [Lucide React](https://lucide.dev/)
 
-Professional Brand: Establish a digital presence that reflects my "Hybrid Developer" identity—combining analytical rigor with creative engineering.
+---
 
-✨ Features
+## 🚀 Getting Started
 
-Responsive Design: Fully optimized for mobile, tablet, and desktop devices.
+To run this project locally, make sure you have [Bun](https://bun.sh/) installed.
 
-SPA Architecture: Smooth, client-side navigation without page reloads.
+### 1. Clone the repository
+```bash
+git clone https://github.com/BayuuPermana/Bayu.git
+cd Bayu
+```
 
-Modern Aesthetic: Dark-themed UI with gradient accents, glassmorphism effects, and smooth animations.
+### 2. Install dependencies
+```bash
+bun install
+```
 
-Interactive UI: Custom scroll effects, hover states, and animated elements using Tailwind CSS.
+### 3. Start development server
+```bash
+bun run dev
+```
 
-Project Showcase: Dedicated cards for featured projects with descriptions and tech tags.
+### 4. Build for production
+```bash
+bun run build
+```
 
-🛠️ Tech Stack
+---
 
-This project is built using modern web technologies:
+## 🛠️ Project Structure
 
-Framework: React
+-   `index.tsx`: Main entry point and theme management.
+-   `components/`: Reusable React components (Hero, About, TechStack, Projects, Contact).
+-   `index.css`: Tailwind CSS entry point with custom variants.
+-   `vite.config.ts`: Vite configuration for React and Tailwind.
 
-Styling: Tailwind CSS
+---
 
-Icons: Lucide React
+## 📄 License
 
-Animation: CSS3 Transitions & Keyframes
+This project is open-source and available under the MIT License. Feel free to use it as a reference for your own portfolio!
+
+---
+
+Built with ❤️ by [Bayu Permana](https://github.com/BayuuPermana)
