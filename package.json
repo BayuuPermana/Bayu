@@ -1,21 +1,11 @@
 {
   "name": "bayu",
-  "homepage": "https://bayuupermana.github.io/Bayu",
   "module": "index.tsx",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "predeploy": "bun run build",
-    "deploy": "gh-pages -d dist"
-  },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.17",
     "@types/bun": "latest",
-    "@types/react": "^19.2.6",
-    "@types/react-dom": "^19.2.3",
+    "@types/react": "18",
+    "@types/react-dom": "18",
     "@vitejs/plugin-react": "^5.1.1",
     "autoprefixer": "^10.4.22",
     "gh-pages": "^6.3.0",
@@ -25,5 +15,19 @@
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "homepage": "https://bayuupermana.github.io/Bayu",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "bun run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "type": "module",
+  "dependencies": {
+    "react": "18",
+    "react-dom": "18"
   }
 }

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Github, Sun, Moon } from 'lucide-react';
 
 interface NavigationProps {
