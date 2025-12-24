@@ -9,6 +9,13 @@ import Contact from './components/Contact';
 const Portfolio = () => {
     const [activeSection, setActiveSection] = useState('home');
     const [isScrolled, setIsScrolled] = useState(false);
+    const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+        if (typeof window !== 'undefined') {
+            const saved = localStorage.getItem('theme');
+            return (saved as 'light' | 'dark') || 'dark';
+        }
+        return 'dark';
+    });
 
     // Handle scroll effects
     useEffect(() => {
@@ -19,6 +26,20 @@ const Portfolio = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Handle theme persistence
+    useEffect(() => {
+        localStorage.setItem('theme', theme);
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+    };
+
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
@@ -28,8 +49,8 @@ const Portfolio = () => {
     };
 
     return (
-        <div className="min-h-screen bg-[#0a0a0a] text-gray-100 font-sans selection:bg-purple-500/30">
-            <Navigation isScrolled={isScrolled} scrollToSection={scrollToSection} />
+        <div className="min-h-screen bg-white transition-colors duration-300 dark:bg-[#0a0a0a] text-gray-900 dark:text-gray-100 font-sans selection:bg-purple-500/30">
+            <Navigation isScrolled={isScrolled} scrollToSection={scrollToSection} theme={theme} toggleTheme={toggleTheme} />
             <Hero scrollToSection={scrollToSection} />
             <About />
             <TechStack />
