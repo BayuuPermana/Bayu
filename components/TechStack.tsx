@@ -77,9 +77,9 @@ const TechStack = () => {
                     <p className="text-gray-600 dark:text-gray-400">Core technical proficiencies in motion</p>
                 </div>
 
-                <div className="flex flex-col gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {skills.map((group, groupIdx) => (
-                        <div key={groupIdx} className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/5 rounded-2xl p-6 shadow-sm group overflow-hidden relative">
+                        <div key={groupIdx} className={`bg-white dark:bg-white/5 border border-gray-200 dark:border-white/5 rounded-2xl p-6 shadow-sm group overflow-hidden relative ${groupIdx === 4 ? 'md:col-span-2' : ''}`}>
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="p-2 bg-blue-50 dark:bg-white/10 rounded-lg text-blue-600 dark:text-blue-300">
                                     {group.icon}
