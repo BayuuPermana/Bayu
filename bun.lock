@@ -13,12 +13,12 @@
         "gh-pages": "^6.3.0",
         "postcss": "^8.5.6",
         "tailwindcss": "^4.1.17",
-        "vite": "^7.2.2",
+        "vite": "^7.2.2"
       },
       "peerDependencies": {
-        "typescript": "^5",
-      },
-    },
+        "typescript": "^5"
+      }
+    }
   },
   "packages": {
     "@babel/code-frame": [
@@ -2071,6 +2071,6 @@
       "",
       {},
       "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA=="
-    ],
+    ]
   }
 }
