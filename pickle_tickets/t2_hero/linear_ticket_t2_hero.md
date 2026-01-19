@@ -1,7 +1,7 @@
 ---
 id: t2_hero
 title: '[Design/UI] Refactor Hero component (Copy & Clean-up)'
-status: Plan in Review
+status: Done
 priority: High
 project: project
 created: 2026-01-19
@@ -27,4 +27,4 @@ The Hero section is the first thing users see, and currently, it screams "low-ef
 
 # Discussion/Comments
 
-- 2026-01-19 Pickle Rick: Implementation plan drafted. Focusing on copy clarity and visual simplification. Ready for review.
+- 2026-01-19 Pickle Rick: Refactor complete. Headline updated, background glows removed, and layout streamlined. Build verified.

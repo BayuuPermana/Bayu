@@ -7,25 +7,24 @@ const About = () => {
             <div className="container mx-auto px-6">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
                     <div className="relative group">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl blur opacity-10 dark:opacity-25 group-hover:opacity-20 dark:group-hover:opacity-50 transition duration-1000"></div>
-                        <div className="relative bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 rounded-2xl p-8 md:p-12 shadow-xl shadow-gray-200/50 dark:shadow-none">
+                        <div className="relative bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 rounded-2xl p-8 md:p-12 shadow-sm">
                             <Code2 className="w-12 h-12 text-green-600 dark:text-green-400 mb-6" />
-                            <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">The Hybrid Advantage</h3>
+                            <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Technical Hybridity</h3>
                             <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                                In a world where data is the new oil, purely functional apps aren't enough. My background combines the analytical rigor of a <strong>Data Analyst</strong> with the creative engineering of a <strong>Full Stack Developer</strong>.
+                                Engineering at the intersection of analytical rigor and scalable software development. I build systems where data isn't just stored, but actively utilized to drive application logic and user experiences.
                             </p>
                             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                                Whether it's building a complex dashboard like <em>Emp-Dash</em> or analyzing environmental metrics in <em>WaterMonitoring</em>, I focus on efficiency, scalability, and user experience.
+                                From architecting workforce analytics platforms like <em>Emp-Dash</em> to implementing environmental monitoring systems, I focus on building resilient, data-aware applications.
                             </p>
                         </div>
                     </div>
                     <div>
-                        <h2 className="text-4xl font-bold mb-8 text-gray-900 dark:text-white">About Me</h2>
+                        <h2 className="text-4xl font-bold mb-8 text-gray-900 dark:text-white">Professional Profile</h2>
                         <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                            Hello! I'm <strong className="text-gray-900 dark:text-white">Bayu Permana</strong>. I am a learner at heart, constantly exploring new technologies to build useful projects.
+                            I am <strong className="text-gray-900 dark:text-white">Bayu Permana</strong>, a Software Engineer specialized in bridging the gap between raw data analysis and robust web architecture.
                         </p>
                         <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                            Currently working on expanding my portfolio, I specialize in taking raw concepts and turning them into deployed applications. I have a strong proficiency in building robust Single Page Applications (SPAs), blending the Python data ecosystem with the modern JavaScript web stack.
+                            I focus on delivering high-performance Single Page Applications (SPAs) that integrate Python's data ecosystem with modern JavaScript frameworks. My goal is to transform complex datasets into functional, production-ready digital products.
                         </p>
 
                         <div className="flex gap-4">
