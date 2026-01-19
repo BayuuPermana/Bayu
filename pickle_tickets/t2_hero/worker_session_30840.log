@@ -1,0 +1,6 @@
+Command executed: gemini -s -y -p Please announce what you are doing. /pickle-worker "Refactor Hero component: remove AI-slop copy and background glows" --completion-promise "I AM DONE"
+--------------------------------------------------------------------------------
+
+
+
+[ERROR] Script failed: [WinError 2] The system cannot find the file specified
