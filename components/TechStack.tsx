@@ -5,8 +5,8 @@ const TechStack = () => {
     const skills = {
         "Data & AI": { icon: <BarChart3 className="w-5 h-5" />, items: ["Python", "Jupyter", "Data Analysis", "ComfyUI"] },
         "Frontend": { icon: <Layout className="w-5 h-5" />, items: ["React", "Next.js", "Vue.js", "TypeScript", "Tailwind", "SPA Architecture"] },
-        "Backend": { icon: <Database className="w-5 h-5" />, items: ["Node.js", "Express", "Bun", "MongoDB", "PHP"] },
-        "Mobile": { icon: <Smartphone className="w-5 h-5" />, items: ["Flutter", "React Native"] },
+        "Backend": { icon: <Database className="w-5 h-5" />, items: ["Node.js", "Express", "Bun", "Rust", "SQLite", "MongoDB"] },
+        "Mobile & Desktop": { icon: <Smartphone className="w-5 h-5" />, items: ["Flutter", "React Native", "Tauri"] },
         "DevOps": { icon: <Terminal className="w-5 h-5" />, items: ["Docker", "Git", "n8n", "Linux"] }
     };
 
