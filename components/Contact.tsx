@@ -5,9 +5,9 @@ const Contact = () => {
     return (
         <section id="contact" className="py-24 relative transition-colors duration-300">
             <div className="container mx-auto px-6 max-w-4xl text-center">
-                <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900 dark:text-white">Let's Build Something Amazing</h2>
+                <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900 dark:text-white">Get in Touch</h2>
                 <p className="text-xl text-gray-600 dark:text-gray-400 mb-12">
-                    I'm currently available for freelance work and full-time opportunities. If you have a project that needs a data-driven developer's touch, I'd love to hear from you.
+                    Open to technical collaborations and engineering opportunities. If you're looking for a developer with a background in analytical systems and web architecture, let's connect.
                 </p>
 
                 <div className="flex flex-col md:flex-row justify-center gap-6 mb-16">

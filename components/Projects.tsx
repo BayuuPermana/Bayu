@@ -5,21 +5,21 @@ const Projects = () => {
     const projects = [
         {
             title: "FinTrack",
-            description: "A comprehensive financial tracking application designed to help users manage expenses, visualize income streams, and gain control over their personal economy. Features real-time data visualization and budget forecasting.",
+            description: "Full-stack personal finance engine with real-time expense tracking and budget forecasting. Built for high-fidelity data visualization and automated financial reporting.",
             tags: ["React", "Node.js", "MongoDB", "Finance"],
             icon: <Wallet className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />,
             color: "from-emerald-500/10 dark:from-emerald-500/20 to-teal-500/5"
         },
         {
             title: "Emp-Dash",
-            description: "An interactive employee management dashboard streamlining HR processes. Provides workforce analytics, attendance tracking, and performance metrics in a unified, user-friendly interface.",
+            description: "Workforce analytics dashboard for HR process automation. Features attendance tracking, performance metrics visualization, and automated employee data management.",
             tags: ["Vue.js", "Data Viz", "Management"],
             icon: <Users className="w-8 h-8 text-blue-600 dark:text-blue-400" />,
             color: "from-blue-500/10 dark:from-blue-500/20 to-cyan-500/5"
         },
         {
             title: "WaterMonitoring",
-            description: "An environmental data analysis project focused on monitoring water quality parameters. Utilizes Python and Jupyter Notebooks to process sensor data and detect anomalies in water ecosystems.",
+            description: "Environmental monitoring system for water quality analysis. Utilizes Python and Jupyter for anomaly detection in sensor datasets and ecological metric reporting.",
             tags: ["Jupyter", "Python", "Data Analysis"],
             icon: <Droplets className="w-8 h-8 text-cyan-600 dark:text-cyan-400" />,
             color: "from-cyan-500/10 dark:from-cyan-500/20 to-blue-500/5"

@@ -1,6 +1,6 @@
-# 👨‍💻 Bayu Permana - Personal Portfolio
+# Engineering Portfolio - Bayu Permana
 
-A modern, responsive, and aesthetic personal portfolio website designed to showcase my work as a Data Analyst and Full-Stack Developer. This project serves as a central hub for my skills, projects, and professional background, bridging the gap between data science and software engineering.
+Technical showcase of a Software Engineer specializing in the intersection of data systems and full-stack development. This project demonstrates high-performance SPA architecture, data-driven visualization, and modern web engineering practices.
 
 🚀 **Live Demo:** [bayuupermana.github.io/Bayu/](https://bayuupermana.github.io/Bayu/)
 
