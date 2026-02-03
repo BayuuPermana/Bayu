@@ -1,7 +1,6 @@
 import React from 'react';
 import { ExternalLink, Wallet, Users, Droplets, Layout, Github } from 'lucide-react';
-
-const baritoImage = require('./img/barito.png');
+import baritoImage from './img/barito.png';
 
 const Projects = () => {
     const projects = [
