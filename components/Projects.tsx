@@ -1,6 +1,8 @@
 import React from 'react';
 import { ExternalLink, Wallet, Users, Droplets, Layout, Github } from 'lucide-react';
 
+const baritoImage = require('./img/barito.png');
+
 const Projects = () => {
     const projects = [
         {
@@ -10,7 +12,8 @@ const Projects = () => {
             icon: <Layout className="w-8 h-8 text-purple-600 dark:text-purple-400" />,
             color: "from-purple-500/10 dark:from-purple-500/20 to-indigo-500/5",
             repoUrl: "https://github.com/BayuuPermana/barito",
-            liveUrl: "https://newbarito-proposal.netlify.app/"
+            liveUrl: "https://newbarito-proposal.netlify.app/",
+            preview: baritoImage
         },
         {
             title: "FinTrack",
@@ -55,11 +58,25 @@ const Projects = () => {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {projects.map((project, index) => (
-                        <div key={index} className="group relative bg-white dark:bg-[#161616] rounded-2xl overflow-hidden border border-gray-200 dark:border-white/5 hover:border-blue-500/30 dark:hover:border-white/10 transition-all duration-300 hover:-translate-y-2 shadow-xl shadow-gray-200/50 dark:shadow-none">
-                            {/* Gradient Overlay */}
-                            <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                        <div key={index} className="group relative bg-white dark:bg-[#161616] rounded-2xl overflow-hidden border border-gray-200 dark:border-white/5 hover:border-blue-500/30 dark:hover:border-white/10 transition-all duration-300 hover:-translate-y-2 shadow-xl shadow-gray-200/50 dark:shadow-none flex flex-col">
+                            {/* Preview Image */}
+                            {project.preview && (
+                                <div className="relative h-48 overflow-hidden">
+                                    <img 
+                                        src={project.preview} 
+                                        alt={project.title} 
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                        <span className="text-white text-xs font-medium px-2 py-1 bg-white/20 backdrop-blur-md rounded-md">Preview Available</span>
+                                    </div>
+                                </div>
+                            )}
 
-                            <div className="p-8 relative z-10 h-full flex flex-col">
+                            {/* Gradient Overlay */}
+                            <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+
+                            <div className="p-8 relative z-10 flex-grow flex flex-col">
                                 <div className="mb-6 p-3 bg-gray-50 dark:bg-white/5 w-fit rounded-xl border border-gray-100 dark:border-white/10">
                                     {project.icon}
                                 </div>
