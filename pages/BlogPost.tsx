@@ -86,12 +86,13 @@ const BlogPost = () => {
                     <ReactMarkdown
                         components={{
                             code({ inline, className, children }: any) {
-                                return inline ? (
-                                    <code>{children}</code>
-                                ) : (
+                                const match = /language-(\w+)/.exec(className || '');
+                                return !inline && match ? (
                                     <CodeBlock className={className}>
                                         {children}
                                     </CodeBlock>
+                                ) : (
+                                    <code className={className}>{children}</code>
                                 );
                             }
                         }}
