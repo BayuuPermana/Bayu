@@ -64,7 +64,7 @@ docker-compose up -d
 ## Troubleshooting Tips
 
 ### Permissions Issues
-If you can't build or run, ensure your user is in the `docker` group or run with `sudo` (though rootless is better, Morty).
+If you can't build or run, ensure your user is in the `docker` group or run with `sudo` (though rootless is the statistically superior configuration for security).
 
 ### Environment Variable Leakage
 Always use a `.env` file and never commit it to your repository. Use `docker-compose --env-file .env up` to be safe.

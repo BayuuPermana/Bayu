@@ -36,7 +36,7 @@ npm install
 ```
 
 ### 3. Environment Configuration
-Copy the template environment file. Don't skip this, Morty!
+Copy the template environment file. This step is critical for system integrity.
 
 ```bash
 cp .env.example .env
@@ -46,14 +46,14 @@ cp .env.example .env
 
 Open your `.env` file and configure the core parameters. For a local setup, focus on:
 
-- `PORT`: Default is `8080`. Change it if you're already running something else.
-- `LOG_LEVEL`: Set to `debug` for development.
-- `ENGINE_SECRET`: Generate a secure string. Don't use "password123", Jerry!
+- `PORT`: Default is `8080`. Modify this if there is a predicted port collision.
+- `LOG_LEVEL`: Set to `debug` for maximum analytical visibility.
+- `ENGINE_SECRET`: Generate a cryptographically secure string. Avoid predictable patterns.
 
 ```env
 PORT=8080
 LOG_LEVEL=debug
-ENGINE_SECRET=solenya_is_watching
+ENGINE_SECRET=calculated_dominance_2026
 ```
 
 ## Running the Engine
