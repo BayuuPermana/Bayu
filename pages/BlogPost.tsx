@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { ChevronLeft, Calendar, Tag } from 'lucide-react';
+import CodeBlock from '../components/CodeBlock';
 
 // Use Vite's build-time globbing
 const postFiles = import.meta.glob('../posts/*.md', { query: '?raw', eager: true, import: 'default' });
@@ -82,7 +83,22 @@ const BlogPost = () => {
                 </header>
 
                 <div className="prose prose-lg dark:prose-invert prose-green max-w-none">
-                    <ReactMarkdown>{content}</ReactMarkdown>
+                    <ReactMarkdown
+                        components={{
+                            code({ node, inline, className, children, ...props }: any) {
+                                if (inline) {
+                                    return <code className={className} {...props}>{children}</code>;
+                                }
+                                return (
+                                    <CodeBlock className={className}>
+                                        {children}
+                                    </CodeBlock>
+                                );
+                            }
+                        }}
+                    >
+                        {content}
+                    </ReactMarkdown>
                 </div>
 
                 <footer className="mt-16 pt-8 border-t border-gray-100 dark:border-white/10">
