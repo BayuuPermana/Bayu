@@ -54,7 +54,7 @@ const BlogList = () => {
         <div className="min-h-screen pt-24 pb-12 px-6">
             <div className="container mx-auto max-w-4xl">
                 <header className="mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent mb-4">
+                    <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent mb-4 pb-2 leading-tight">
                         Blog
                     </h1>
                     <p className="text-gray-600 dark:text-gray-400 text-lg">
