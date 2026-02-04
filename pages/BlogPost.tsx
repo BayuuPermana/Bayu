@@ -85,11 +85,10 @@ const BlogPost = () => {
                 <div className="prose prose-lg dark:prose-invert prose-green max-w-none">
                     <ReactMarkdown
                         components={{
-                            code({ node, inline, className, children, ...props }: any) {
-                                if (inline) {
-                                    return <code className={className} {...props}>{children}</code>;
-                                }
-                                return (
+                            code({ inline, className, children }: any) {
+                                return inline ? (
+                                    <code>{children}</code>
+                                ) : (
                                     <CodeBlock className={className}>
                                         {children}
                                     </CodeBlock>
