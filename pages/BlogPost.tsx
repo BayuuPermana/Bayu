@@ -18,7 +18,7 @@ const BlogPost = () => {
         return <Navigate to="/blog" replace />;
     }
 
-    const { data, content } = matter(rawContent);
+    const { data, content } = matter(rawContent as string);
 
     return (
         <div className="min-h-screen pt-24 pb-20 px-6">

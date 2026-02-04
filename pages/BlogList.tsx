@@ -15,7 +15,7 @@ interface PostMetadata {
 
 const BlogList = () => {
     const posts: PostMetadata[] = Object.entries(postFiles).map(([path, content]) => {
-        const { data } = matter(content);
+        const { data } = matter(content as string);
         const slug = path.split('/').pop()?.replace('.md', '') || '';
         return {
             title: data.title || 'Untitled',

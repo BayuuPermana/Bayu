@@ -8,7 +8,8 @@
     ],
     "target": "ESNext",
     "types": [
-      "bun-types"
+      "bun-types",
+      "vite/client"
     ],
     "module": "ESNext",
     "moduleDetection": "force",
