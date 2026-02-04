@@ -1,16 +1,35 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
-import matter from 'gray-matter';
 import { ChevronLeft, Calendar, Tag } from 'lucide-react';
 
-// Use Vite's build-time globbing to fetch all markdown files in the posts directory
-const postFiles = import.meta.glob('../posts/*.md', { as: 'raw', eager: true });
+// Use Vite's build-time globbing
+const postFiles = import.meta.glob('../posts/*.md', { query: '?raw', eager: true, import: 'default' });
+
+const parseFrontmatter = (content: string) => {
+    const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+    if (!match) return { data: {}, content };
+    
+    const yaml = match[1] || '';
+    const data: any = {};
+    yaml.split('\n').forEach(line => {
+        const [key, ...valueParts] = line.split(':');
+        if (key && valueParts.length > 0) {
+            let value = valueParts.join(':').trim();
+            value = value.replace(/^["'](.*)["']$/, '$1');
+            if (value.startsWith('[') && value.endsWith(']')) {
+                data[key.trim()] = value.slice(1, -1).split(',').map(v => v.trim().replace(/^["'](.*)["']$/, '$1'));
+            } else {
+                data[key.trim()] = value;
+            }
+        }
+    });
+    
+    return { data, content: content.replace(match[0], '').trim() };
+};
 
 const BlogPost = () => {
     const { slug } = useParams<{ slug: string }>();
-    
-    // Find the file that matches the slug
     const fileName = `../posts/${slug}.md`;
     const rawContent = postFiles[fileName];
 
@@ -18,7 +37,7 @@ const BlogPost = () => {
         return <Navigate to="/blog" replace />;
     }
 
-    const { data, content } = matter(rawContent as string);
+    const { data, content } = parseFrontmatter(rawContent as string);
 
     return (
         <div className="min-h-screen pt-24 pb-20 px-6">
@@ -35,7 +54,7 @@ const BlogPost = () => {
                     <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 dark:text-gray-500 mb-4">
                         <div className="flex items-center gap-1.5">
                             <Calendar size={14} />
-                            {new Date(data.date).toLocaleDateString('en-US', {
+                            {new Date(data.date || '2026-01-01').toLocaleDateString('en-US', {
                                 year: 'numeric',
                                 month: 'long',
                                 day: 'numeric'
@@ -53,7 +72,7 @@ const BlogPost = () => {
                         )}
                     </div>
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                        {data.title}
+                        {data.title || 'Untitled'}
                     </h1>
                     {data.description && (
                         <p className="text-xl text-gray-600 dark:text-gray-400 italic border-l-4 border-green-500 pl-4">

@@ -28,7 +28,7 @@ const App = () => {
     };
 
     return (
-        <Router basename={import.meta.env.DEV ? '/' : '/Bayu'}>
+        <Router basename="/Bayu">
             <div className="min-h-screen bg-white transition-colors duration-300 dark:bg-[#0a0a0a] text-gray-900 dark:text-gray-100 font-sans selection:bg-purple-500/30">
                 <Navigation theme={theme} toggleTheme={toggleTheme} />
                 <Routes>
