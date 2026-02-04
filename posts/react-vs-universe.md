@@ -5,7 +5,7 @@ description: "A deep dive into why components are the building blocks of reality
 tags: ["react", "philosophy"]
 ---
 
-# React vs. The Universe
+## React vs. The Universe
 
 Is reality just a series of nested components? Let's find out.
 

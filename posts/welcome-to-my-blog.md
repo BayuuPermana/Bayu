@@ -5,7 +5,7 @@ description: "This is the first post on my new markdown-powered blog."
 tags: ["intro", "welcome"]
 ---
 
-# Hello World!
+## Hello World!
 
 Welcome to my portfolio blog. This blog is built using **React**, **Vite**, and **Markdown**.
 
