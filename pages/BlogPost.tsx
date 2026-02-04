@@ -3,6 +3,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { ChevronLeft, Calendar, Tag } from 'lucide-react';
 import CodeBlock from '../components/CodeBlock';
+import SEO from '../components/SEO';
 
 // Use Vite's build-time globbing
 const postFiles = import.meta.glob('../posts/*.md', { query: '?raw', eager: true, import: 'default' });
@@ -42,6 +43,13 @@ const BlogPost = () => {
 
     return (
         <div className="min-h-screen pt-24 pb-20 px-6">
+            <SEO 
+                title={data.title} 
+                description={data.description} 
+                slug={slug} 
+                date={data.date} 
+                tags={data.tags}
+            />
             <article className="container mx-auto max-w-3xl">
                 <Link 
                     to="/blog" 

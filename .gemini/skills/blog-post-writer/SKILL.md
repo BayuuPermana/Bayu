@@ -39,8 +39,8 @@ tags: ["tag1", "tag2"]
 
 Follow these best practices for a clean look:
 
-1. **Heading 1**: Use only one `# Heading` for the main title (if not redundant with frontmatter).
-2. **Subheadings**: Use `##` and `###` for hierarchy.
+1. **No Redundant Titles**: Do **NOT** repeat the `title` or `description` as a `# Heading` or paragraph at the top of the file. The system renders these automatically from the Frontmatter.
+2. **Subheadings**: Start your content directly with `## Subheadings`.
 3. **Images**: Store images in `public/img/blog/` and reference them as `/img/blog/filename.png`.
 4. **Code Blocks**: Always specify the language for syntax highlighting (e.g., ```typescript).
 

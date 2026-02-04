@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import TechStack from '../components/TechStack';
@@ -15,6 +16,10 @@ const Home = () => {
 
     return (
         <main>
+            <SEO 
+                title="Home" 
+                description="Bayu Permana - Data Systems Engineer & Full-Stack Developer portfolio." 
+            />
             <Hero scrollToSection={scrollToSection} />
             <About />
             <TechStack />
