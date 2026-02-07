@@ -1,41 +1,56 @@
-# OmniStream AI Installation Guide
+# Detailed Installation & Web UI Guide
 
-## Prerequisites
-- **Bun**: v1.0.0 or higher.
-- **Python**: v3.10 or higher (with `venv`).
-- **Google API Key**: Must have access to the Multimodal Live API.
+## System Requirements
+- **OS**: Windows (tested), Linux, or macOS.
+- **Tools**: `yt-dlp` and `ffmpeg` must be available in your system path.
 
-## Setup Instructions
+## Step-by-Step Setup
 
-### 1. Repository Setup
+### 1. Monorepo Installation
+We use Bun workspaces. To install dependencies for all packages:
 ```bash
-bun install
+bun run install:all
 ```
 
-### 2. Python Environment
-The project expects a virtual environment in `python/venv`.
+### 2. Python Backend Setup
+The frame extractor is written in Python for performance and library support.
 ```bash
 cd python
 python -m venv venv
-./venv/Scripts/activate # On Windows
+# Windows
+.\venv\Scripts\activate
+# Linux/macOS
+source venv/bin/activate
+
 pip install -r requirements.txt
 ```
 
-### 3. Configuration
-Create a `.env` file in the root directory:
+### 3. API Key
+Get your key from [Google AI Studio](https://aistudio.google.com/). Ensure you have access to `gemini-2.0-flash-exp` or equivalent models supporting the Live API.
+
+Place it in `.env` at the root:
 ```env
-GOOGLE_API_KEY=your_api_key_here
+GOOGLE_API_KEY=your_key_here
 ```
 
-### 4. Running the Application
-From the root directory:
+## Running the Web UI
+
+### Development Mode
 ```bash
 bun run dev
 ```
-This will start both the API (port 3000) and the Frontend (port 5173).
+- **Backend API**: [http://localhost:3000](http://localhost:3000)
+- **Frontend Web**: [http://localhost:5173](http://localhost:5173)
 
-## Troubleshooting
-- **No Audio**: Ensure your browser has permission to play audio. The UI requires a user gesture (Start button) to resume the AudioContext.
-- **Python Errors**: Verify that `cv2` and `yt-dlp` are installed in the `python/venv`.
-- **Latency**: If the stream is lagging, lower the FPS in `packages/api/src/index.ts`.
-- **Windows Script Error**: If you encounter `Background commands "&" are not supported yet`, use the `concurrently` package in your `package.json` or run the API and Frontend in separate terminals.
+### How to use the interface:
+1. **Source**: Paste a YouTube URL (Live streams or Videos).
+2. **Persona**: Define the AI's personality (e.g., "Sassy sports commentator").
+3. **Engage**: Click **"Engage AI Commentary"**.
+4. **Audio**: The browser will play PCM16 audio. Ensure your volume is up and the browser tab is focused.
+
+## Testing
+Verify your setup before running:
+```bash
+bun run test:all
+```
+This runs the Bun API tests and the Python integration tests.

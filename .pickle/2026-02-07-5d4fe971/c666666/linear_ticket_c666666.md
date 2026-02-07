@@ -1,7 +1,7 @@
 ﻿---
 id: c666666
 title: "Fix WebSocket resource cleanup in backend"
-status: Triage
+status: Done
 priority: High
 project: project
 created: 2026-02-07

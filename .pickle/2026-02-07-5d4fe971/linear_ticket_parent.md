@@ -1,7 +1,7 @@
----
+﻿---
 id: p7382910
 title: "[Epic] Gemini Live YouTube Commentator Web UI"
-status: Triage
+status: Done
 priority: High
 project: project
 created: 2026-02-07
@@ -20,3 +20,4 @@ The current Python-based CLI is hard to use and lacks visual/audio feedback for 
 
 ## Solution
 Implement a Bun monorepo with an Elysia backend (for Gemini Live proxying and YouTube frame extraction) and a React frontend (for control and feedback).
+

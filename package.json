@@ -6,15 +6,16 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:api": "cd packages/api && bun run --hot src/index.ts",
+    "dev:api": "bun run --hot packages/api/src/index.ts",
     "dev:web": "cd packages/web && bun run vite",
-    "dev": "bun run dev:api && bun run dev:web",
+    "dev": "concurrently \"bun run dev:api\" \"bun run dev:web\"",
     "test:api": "cd packages/api && bun test",
-    "test:python": "cd python && venv\\Scripts\\python src/test_integration.py",
+    "test:python": "cd python && venv/Scripts/python src/test_integration.py",
     "test:all": "bun run test:api && bun run test:python",
     "install:all": "bun install && cd packages/api && bun install && cd ../web && bun install"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "concurrently": "^9.2.1"
   }
 }
