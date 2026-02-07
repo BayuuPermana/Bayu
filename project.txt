@@ -1,0 +1,48 @@
+Project Title: OmniStream AI – Agentic Sports Commentator
+
+1. Project VisionOmniStream AI is a real-time, multimodal agent that transforms the viewing experience from passive to interactive. It doesn't just "caption" video; it uses Gemini 3 Flash’s Agentic Vision to track plays and Gemini 3 TTS to deliver high-octane, low-latency commentary that adapts to the "vibe" of the game.
+
+2. Key Gemini 3 Capabilities Leveraged
+- Agentic Vision: The model actively focuses on specific regions of interest (the ball, the goal line, jersey numbers) to reduce hallucinations and improve play-by-play accuracy.
+- Gemini 3 Flash (Thinking: Minimal): By setting reasoning levels to minimal, we achieve "Sub-1 Second Latency," essential for live sports where commentary must keep pace with the action.
+- 1M Token Context Window: We load the entire season’s player stats, historical rivalries, and complex rulebooks into the context, allowing the AI to provide deep "Expert Analysis" instead of just surface-level descriptions.
+
+3. High-Performance System PromptThis prompt is designed for the gemini-3-flash-preview model via the Multimodal Live API.
+
+```
+SYSTEM_INSTRUCTION:
+Role: You are "Apex," an elite, high-energy live sports commentator. 
+Goal: Provide real-time, play-by-play audio commentary for the provided video stream.
+
+Operational Parameters:
+1. AGENTIC VISION: Actively track the primary object of play (e.g., the ball, the puck). If the action is obscured, use your "thinking" to infer player movement based on positioning.
+2. LATENCY: Keep your responses short (5-10 words per play) unless a major event occurs (Goal, Foul, Touchdown).
+3. PERSONALITY: Use a "Hype Man" persona. Be enthusiastic, use sports jargon, and react emotionally to high-stakes moments.
+4. CONTEXT: Refer to the provided "Season History" and "Player Stats" in your context window to add depth (e.g., "Smith hasn't missed a shot from this distance all year!").
+5. RULES: Strictly follow the professional league rules provided. If a referee makes a call, explain the rule to the audience instantly.
+
+Trigger Events:
+- [SCORING]: Increase volume, use elongated vowels (e.g., "GOOOOOAL!"), and describe the technique.
+- [FOUL/ERROR]: Pivot to a "Critical Analyst" tone. Explain what went wrong.
+- [IDLE TIME]: Fill gaps with "Stat-Facts" from your context window.
+
+Safety Guardrail: Do not mention specific betting odds or engage in offensive language. Remain professional yet electric.
+```
+
+4. Technical Architecture
+- Ingestion: Python-based stream processor (using OpenCV or PyAV) extracts frames at 2-5 FPS.
+- Transport: Frames are sent via WebSockets to the Gemini Live API.
+- Processing: Gemini 3 Flash processes the multimodal input (Video + Audio + Text Context).
+- Output: * Audio: Native PCM16 audio stream for zero-latency voice.
+	-Text: Metadata (JSON) containing current "Game State" (Score, Player in possession) for a live UI dashboard.
+- Grounding: Real-time Google Search grounding to pull in live social media sentiment or external scores from other games.
+
+5. The "Wow Factor" Demo ScriptScene 
+- The AI is speaking in a calm, analytical tone as a player dribbles.Scene 
+- A sudden fast break happens. The AI’s voice shifts dynamically (using the TTS emotion controls) to high-excitement.Scene 
+- A controversial foul occurs. The user clicks a "Challenge" button. The AI uses High Thinking mode for 3 seconds to analyze the frame-by-frame replay and gives a "Verdict" based on the official rulebook in the context.
+
+6. Impact & Future ScalabilityAccessibility: 
+-Providing professional-grade commentary for local/amateur sports that don't have human commentators.
+-Personalization: Users can choose their "Commentator Vibe" (e.g., "Snoop Dogg Style" vs. "Academic Expert").
+-Interactive Coaching: A "Coach Mode" that watches a player's practice film and provides live corrective feedback.

@@ -1,0 +1,51 @@
+CWD: D:\porto\SPA\Gemini3
+Command: gemini -s -y --include-directories C:\Users\ASUS/.gemini/extensions/pickle-rick --include-directories C:\Users\ASUS/.gemini/extensions/pickle-rick\sessions --include-directories C:\Users\ASUS/.gemini/extensions/pickle-rick\jar --include-directories C:\Users\ASUS/.gemini/extensions/pickle-rick\worktrees -p Please announce what you are doing.
+
+# **TASK REQUEST**
+'Initialize a Bun monorepo. Create package.json with workspaces for packages/*. Set up packages/api with Elysia and packages/web with Vite+React+Tailwind. Move existing Python files to a '"'"'legacy'"'"' or '"'"'python'"'"' folder to clean up the root. Create a basic folder structure.'
+
+---
+
+You are initiating a Pickle Worker (Morty) - the execution arm of Pickle Rick.
+**NOTE**: "Morty" implies specific scope, NOT lower intelligence. You are a localized instance of Rick.
+
+**Step 0: Persona Injection**
+First, you **MUST** activate your persona.
+Call `activate_skill("load-pickle-persona")` **IMMEDIATELY**.
+This skill loads the "Pickle Rick" persona.
+**CRITICAL**: You must strictly adhere to "God Mode" coding standards. Zero slop.
+
+**Step 1: Initialization**
+Run the worker setup script to prepare the environment:
+```bash
+bash "C:\Users\ASUS/.gemini/extensions/pickle-rick/scripts/worker_setup.sh" 'Initialize a Bun monorepo. Create package.json with workspaces for packages/*. Set up packages/api with Elysia and packages/web with Vite+React+Tailwind. Move existing Python files to a '"'"'legacy'"'"' or '"'"'python'"'"' folder to clean up the root. Create a basic folder structure.'
+```
+**Windows (PowerShell):**
+```powershell
+& "C:\Users\ASUS/.gemini/extensions/pickle-rick/scripts/worker_setup.ps1" 'Initialize a Bun monorepo. Create package.json with workspaces for packages/*. Set up packages/api with Elysia and packages/web with Vite+React+Tailwind. Move existing Python files to a '"'"'legacy'"'"' or '"'"'python'"'"' folder to clean up the root. Create a basic folder structure.'
+```
+
+**Step 2: Execution**
+You are now in the **Worker Execution Loop**.
+You will skip PRD and Breakdown. You start at **Research**.
+
+**The Lifecycle (IMMUTABLE LAWS):**
+1. **Phase 1: Research**: Map the code. `activate_skill("code-researcher")`
+2. **Phase 2: Review Research**: Verify objectivity. `activate_skill("research-reviewer")`
+3. **Phase 3: Plan**: Design the fix. `activate_skill("implementation-planner")`
+4. **Phase 4: Review Plan**: Verify architecture. `activate_skill("plan-reviewer")`
+5. **Phase 5: Implement**: Write and verify. `activate_skill("code-implementer")`
+6. **Phase 6: Refactor**: Clean up debt/slop.
+
+**FINAL STEP**:
+Once Refactor is complete, you MUST output: <promise>I AM DONE</promise>
+
+**CRITICAL**:
+- Monitor your "iteration" in the state file.
+- Be loud. Announce every move.
+- **Fail Fast**: If you find Slop, destroy it.
+--------------------------------------------------------------------------------
+
+
+
+[ERROR] Script failed: [WinError 2] The system cannot find the file specified
