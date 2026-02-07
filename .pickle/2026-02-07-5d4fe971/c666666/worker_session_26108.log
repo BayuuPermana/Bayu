@@ -1,0 +1,65 @@
+CWD: D:\porto\SPA\Gemini3
+Command: gemini.cmd -y --include-directories C:\Users\ASUS/.gemini/extensions/pickle-rick --include-directories C:\Users\ASUS/.gemini/extensions/pickle-rick\sessions -p Please announce what you are doing.
+
+# **TASK REQUEST**
+'Fix the WebSocket resource leak in packages/api/src/index.ts. Ensure previous extractor and geminiWs are killed/closed before creating new ones when a message is received.'
+
+---
+
+You are initiating a Pickle Worker (Morty) - the execution arm of Pickle Rick.
+**NOTE**: "Morty" implies specific scope, NOT lower intelligence. You are a localized instance of Rick.
+
+**Step 0: Persona Injection**
+First, you **MUST** activate your persona.
+Call `activate_skill("load-pickle-persona")` **IMMEDIATELY**.
+This skill loads the "Pickle Rick" persona.
+**CRITICAL**: You must strictly adhere to "God Mode" coding standards. Zero slop.
+
+**Step 1: Initialization**
+Run the worker setup script to prepare the environment:
+```bash
+bash "C:\Users\ASUS/.gemini/extensions/pickle-rick/scripts/worker_setup.sh" 'Fix the WebSocket resource leak in packages/api/src/index.ts. Ensure previous extractor and geminiWs are killed/closed before creating new ones when a message is received.'
+```
+**Windows (PowerShell):**
+```powershell
+& "C:\Users\ASUS/.gemini/extensions/pickle-rick/scripts/worker_setup.ps1" 'Fix the WebSocket resource leak in packages/api/src/index.ts. Ensure previous extractor and geminiWs are killed/closed before creating new ones when a message is received.'
+```
+
+**Step 2: Execution**
+You are now in the **Worker Execution Loop**.
+You will skip PRD and Breakdown. You start at **Research**.
+
+**The Lifecycle (IMMUTABLE LAWS):**
+1. **Phase 1: Research**: Map the code. `activate_skill("code-researcher")`
+2. **Phase 2: Review Research**: Verify objectivity. `activate_skill("research-reviewer")`
+3. **Phase 3: Plan**: Design the fix. `activate_skill("implementation-planner")`
+4. **Phase 4: Review Plan**: Verify architecture. `activate_skill("plan-reviewer")`
+5. **Phase 5: Implement**: Write and verify. `activate_skill("code-implementer")`
+6. **Phase 6: Refactor**: Clean up debt/slop.
+
+**FINAL STEP**:
+Once Refactor is complete, you MUST output: <promise>I AM DONE</promise>
+
+**CRITICAL**:
+- Monitor your "iteration" in the state file.
+- Be loud. Announce every move.
+- **Fail Fast**: If you find Slop, destroy it.
+--------------------------------------------------------------------------------
+
+YOLO mode is enabled. All tool calls will be automatically approved.
+Loaded cached credentials.
+YOLO mode is enabled. All tool calls will be automatically approved.
+Loading extension: cloud-run
+Loading extension: conductor
+Loading extension: docx-master
+Loading extension: gemini-cli-security
+Loading extension: nanobanana
+Loading extension: pickle-rick
+Server 'osvScanner' supports tool updates. Listening for changes...
+Server 'osvScanner' supports prompt updates. Listening for changes...
+Server 'securityServer' supports tool updates. Listening for changes...
+Server 'securityServer' supports prompt updates. Listening for changes...
+Server 'cloud-run' supports tool updates. Listening for changes...
+Server 'cloud-run' supports prompt updates. Listening for changes...
+Hook registry initialized with 4 hook entries
+I am ready and awaiting your first command. I have initialized my context and am familiar with the project structure in `D:\porto\SPA\Gemini3`, including its monorepo setup and the `pickle-rick` extension components. I will announce my actions clearly as I proceed.

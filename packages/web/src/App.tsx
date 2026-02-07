@@ -1,9 +1,9 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import { Play, Square, MessageSquare, Video, Settings, Activity } from 'lucide-react'
 
 // God-tier PCM16 Player
 class PCM16Player {
-  private context: AudioContext
+  public context: AudioContext
   private nextStartTime: number = 0
   private sampleRate: number = 24000
 
@@ -20,7 +20,8 @@ class PCM16Player {
     const pcm16 = new Int16Array(bytes.buffer)
     const float32 = new Float32Array(pcm16.length)
     for (let i = 0; i < pcm16.length; i++) {
-      float32[i] = pcm16[i] / 32768.0
+      const val = pcm16[i]
+      float32[i] = val ? val / 32768.0 : 0
     }
 
     const buffer = this.context.createBuffer(1, float32.length, this.sampleRate)
@@ -51,7 +52,7 @@ function App() {
   const [prompt, setPrompt] = useState('You are Apex, an elite high-energy sports commentator.')
   const [isConnected, setIsConnected] = useState(false)
   const [transcript, setTranscript] = useState<string[]>([])
-  const [latency, setLatency] = useState<number>(0)
+  const [latency] = useState<number>(0)
   
   const videoRef = useRef<HTMLImageElement>(null)
   const wsRef = useRef<WebSocket | null>(null)
@@ -199,7 +200,7 @@ function App() {
                   <input 
                     type="text" 
                     value={url}
-                    onChange={(e) => setUrl(e.target.value)}
+                    onChange={(e) => setUrl((e.target as HTMLInputElement).value)}
                     placeholder="YouTube URL"
                     className="w-full bg-zinc-950 border border-zinc-800 rounded-xl p-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-zinc-700"
                   />
@@ -210,7 +211,7 @@ function App() {
                 <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-1">System Instructions</label>
                 <textarea 
                   value={prompt}
-                  onChange={(e) => setPrompt(e.target.value)}
+                  onChange={(e) => setPrompt((e.target as HTMLTextAreaElement).value)}
                   className="w-full bg-zinc-950 border border-zinc-800 rounded-xl p-4 text-sm h-40 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all resize-none placeholder:text-zinc-700 leading-relaxed"
                 />
               </div>
@@ -235,18 +236,6 @@ function App() {
                   </>
                 )}
               </button>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-blue-500/20 p-6 rounded-2xl relative overflow-hidden group">
-            <div className="relative z-10">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">Pro Tip</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                Try switching personas to "Snoop Dogg" or "Academic Historian" for a completely different vibe. Gemini 3 Flash adapts instantly.
-              </p>
-            </div>
-            <div className="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform duration-700">
-              <Activity className="w-24 h-24 text-blue-500" />
             </div>
           </div>
         </div>

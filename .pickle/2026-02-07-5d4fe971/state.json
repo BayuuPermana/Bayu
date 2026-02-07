@@ -1,0 +1,18 @@
+﻿{
+    "started_at":  "2026-02-07T12:29:47Z",
+    "iteration":  1,
+    "original_prompt":  "Cleanup and bug fixes",
+    "worker_timeout_seconds":  1200,
+    "max_iterations":  10,
+    "max_time_minutes":  60,
+    "working_dir":  "D:\\porto\\SPA\\Gemini3",
+    "current_ticket":  null,
+    "session_dir":  "D:\\porto\\SPA\\Gemini3\\.pickle\\2026-02-07-5d4fe971",
+    "history":  [
+
+                ],
+    "start_time_epoch":  1770467387,
+    "step":  "loop",
+    "completion_promise":  null,
+    "active":  true
+}

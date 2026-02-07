@@ -8,7 +8,10 @@
   "scripts": {
     "dev:api": "cd packages/api && bun run --hot src/index.ts",
     "dev:web": "cd packages/web && bun run vite",
-    "dev": "bun run dev:api & bun run dev:web",
+    "dev": "bun run dev:api && bun run dev:web",
+    "test:api": "cd packages/api && bun test",
+    "test:python": "cd python && venv\\Scripts\\python src/test_integration.py",
+    "test:all": "bun run test:api && bun run test:python",
     "install:all": "bun install && cd packages/api && bun install && cd ../web && bun install"
   },
   "devDependencies": {
