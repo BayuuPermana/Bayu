@@ -11,7 +11,7 @@ const postFiles = import.meta.glob('../posts/*.md', { query: '?raw', eager: true
 const parseFrontmatter = (content: string) => {
     const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
     if (!match) return { data: {}, content };
-    
+
     const yaml = match[1] || '';
     const data: any = {};
     yaml.split('\n').forEach(line => {
@@ -26,9 +26,11 @@ const parseFrontmatter = (content: string) => {
             }
         }
     });
-    
+
     return { data, content: content.replace(match[0], '').trim() };
 };
+
+import remarkGfm from 'remark-gfm';
 
 const BlogPost = () => {
     const { slug } = useParams<{ slug: string }>();
@@ -43,16 +45,16 @@ const BlogPost = () => {
 
     return (
         <div className="min-h-screen pt-24 pb-20 px-6">
-            <SEO 
-                title={data.title} 
-                description={data.description} 
-                slug={slug} 
-                date={data.date} 
+            <SEO
+                title={data.title}
+                description={data.description}
+                slug={slug}
+                date={data.date}
                 tags={data.tags}
             />
             <article className="container mx-auto max-w-3xl">
-                <Link 
-                    to="/blog" 
+                <Link
+                    to="/blog"
                     className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-green-500 dark:hover:text-green-400 transition-colors mb-8 group"
                 >
                     <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
@@ -92,6 +94,7 @@ const BlogPost = () => {
 
                 <div className="prose prose-lg dark:prose-invert prose-green max-w-none">
                     <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
                         components={{
                             code({ inline, className, children }: any) {
                                 const match = /language-(\w+)/.exec(className || '');
@@ -102,7 +105,29 @@ const BlogPost = () => {
                                 ) : (
                                     <code className={className}>{children}</code>
                                 );
-                            }
+                            },
+                            table: ({ children }) => (
+                                <div className="overflow-x-auto my-8 border border-gray-200 dark:border-white/10 rounded-xl overflow-hidden shadow-sm">
+                                    <table className="min-w-full border-collapse m-0">
+                                        {children}
+                                    </table>
+                                </div>
+                            ),
+                            thead: ({ children }) => (
+                                <thead className="bg-gray-100/50 dark:bg-white/5 backdrop-blur-sm">
+                                    {children}
+                                </thead>
+                            ),
+                            th: ({ children }) => (
+                                <th className="px-6 py-4 text-left text-[10px] md:text-xs font-black text-gray-500 dark:text-gray-400 uppercase tracking-[0.2em] border-b border-gray-200 dark:border-white/10">
+                                    {children}
+                                </th>
+                            ),
+                            td: ({ children }) => (
+                                <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-100 dark:border-white/5 last:border-b-0">
+                                    {children}
+                                </td>
+                            ),
                         }}
                     >
                         {content}
@@ -110,8 +135,8 @@ const BlogPost = () => {
                 </div>
 
                 <footer className="mt-16 pt-8 border-t border-gray-100 dark:border-white/10">
-                    <Link 
-                        to="/blog" 
+                    <Link
+                        to="/blog"
                         className="text-green-500 hover:text-green-600 dark:hover:text-green-400 font-medium"
                     >
                         ← View all posts
