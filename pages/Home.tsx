@@ -5,21 +5,17 @@ import About from '../components/About';
 import TechStack from '../components/TechStack';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
+import SectionHUD from '../components/SectionHUD';
+import { scrollToSection } from '../utils/scroll';
 
 const Home = () => {
-    const scrollToSection = (id: string) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
     return (
         <main>
             <SEO 
                 title="Home" 
                 description="Bayu Permana - Data Systems Engineer & Full-Stack Developer portfolio." 
             />
+            <SectionHUD />
             <Hero scrollToSection={scrollToSection} />
             <About />
             <TechStack />
