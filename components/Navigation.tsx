@@ -41,19 +41,27 @@ const Navigation: React.FC<NavigationProps> = ({ theme, toggleTheme }) => {
                     Bayuu<span className="text-green-600 dark:text-green-400">Permana</span>
                 </Link>
                 
-                <div className="hidden md:flex gap-8 text-sm font-medium text-gray-500 dark:text-gray-400 items-center">
-                    <Link
-                        to="/"
-                        className={`hover:text-green-500 dark:hover:text-green-400 transition-colors uppercase tracking-wider text-xs ${location.pathname === '/' ? 'text-green-500' : ''}`}
-                    >
-                        Home
-                    </Link>
-                    <Link 
-                        to="/blog" 
-                        className={`hover:text-green-500 dark:hover:text-green-400 transition-colors uppercase tracking-wider text-xs ${location.pathname.startsWith('/blog') ? 'text-green-500' : ''}`}
-                    >
-                        Blog
-                    </Link>
+                <div className="hidden md:flex gap-4 text-sm font-medium text-gray-500 dark:text-gray-400 items-center">
+                    {[
+                        { name: 'Home', path: '/' },
+                        { name: 'Blog', path: '/blog' }
+                    ].map((item) => {
+                        const isActive = item.path === '/' 
+                            ? location.pathname === '/' 
+                            : location.pathname.startsWith(item.path);
+                        
+                        return (
+                            <Link
+                                key={item.name}
+                                to={item.path}
+                                className={`px-4 py-2 rounded-lg transition-all uppercase tracking-wider text-xs hover:bg-gray-100 dark:hover:bg-white/5 hover:text-green-500 dark:hover:text-green-400 ${
+                                    isActive ? 'text-green-500 bg-gray-50 dark:bg-white/5' : ''
+                                }`}
+                            >
+                                {item.name}
+                            </Link>
+                        );
+                    })}
                 </div>
 
                 <div className="flex items-center gap-4">
