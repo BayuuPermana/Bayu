@@ -1,12 +1,14 @@
 import React from 'react';
 import { ExternalLink, Wallet, Users, Droplets, Layout, Github } from 'lucide-react';
 import baritoImage from './img/barito.png';
+import waterImage from './img/Water.png';
+
 
 const Projects = () => {
     const projects = [
         {
             title: "Barito",
-            description: "A professional proposal and project management platform. Features a clean, high-performance interface for managing complex deliverables and stakeholder communication.",
+            description: "Proposal and project management platform built for streamlined deliverable tracking. Implements a responsive interface for managing stakeholder communications and project lifecycle.",
             tags: ["React", "TypeScript", "Tailwind"],
             icon: <Layout className="w-8 h-8 text-purple-600 dark:text-purple-400" />,
             color: "from-purple-500/10 dark:from-purple-500/20 to-indigo-500/5",
@@ -16,7 +18,7 @@ const Projects = () => {
         },
         {
             title: "FinTrack",
-            description: "Full-stack personal finance engine with real-time expense tracking and budget forecasting. Built for high-fidelity data visualization and automated financial reporting.",
+            description: "Expense tracking and budget forecasting engine. Built with React and Node.js to provide automated financial reporting and data-driven budget insights.",
             tags: ["React", "Node.js", "MongoDB", "Finance"],
             icon: <Wallet className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />,
             color: "from-emerald-500/10 dark:from-emerald-500/20 to-teal-500/5",
@@ -24,7 +26,7 @@ const Projects = () => {
         },
         {
             title: "Emp-Dash",
-            description: "Workforce analytics dashboard for HR process automation. Features attendance tracking, performance metrics visualization, and automated employee data management.",
+            description: "Workforce analytics dashboard designed for HR automation. Integrates attendance tracking and performance metrics into a unified visualization interface.",
             tags: ["Vue.js", "Data Viz", "Management"],
             icon: <Users className="w-8 h-8 text-blue-600 dark:text-blue-400" />,
             color: "from-blue-500/10 dark:from-blue-500/20 to-cyan-500/5",
@@ -32,11 +34,13 @@ const Projects = () => {
         },
         {
             title: "WaterMonitoring",
-            description: "Environmental monitoring system for water quality analysis. Utilizes Python and Jupyter for anomaly detection in sensor datasets and ecological metric reporting.",
+            description: "Water quality analysis system utilizing Python for anomaly detection. Analyzes ecological sensor datasets to generate actionable environmental metric reports.",
             tags: ["Jupyter", "Python", "Data Analysis"],
             icon: <Droplets className="w-8 h-8 text-cyan-600 dark:text-cyan-400" />,
             color: "from-cyan-500/10 dark:from-cyan-500/20 to-blue-500/5",
-            repoUrl: "https://github.com/BayuuPermana/waterMonitoring"
+            repoUrl: "https://github.com/BayuuPermana/waterMonitoring",
+            preview: waterImage 
+
         }
     ];
 
@@ -47,7 +51,7 @@ const Projects = () => {
                     <div>
                         <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Featured Projects</h2>
                         <p className="text-gray-600 dark:text-gray-400 max-w-xl">
-                            A selection of my recent work, ranging from financial tools to data analysis notebooks.
+                            A selection of recent engineering projects, ranging from financial tools to data analysis systems.
                         </p>
                     </div>
                     <a href="https://github.com/BayuuPermana?tab=repositories" className="text-pink-600 dark:text-pink-400 hover:text-pink-500 dark:hover:text-pink-300 flex items-center gap-2 group font-medium">
@@ -60,15 +64,12 @@ const Projects = () => {
                         <div key={index} className="group relative bg-white dark:bg-[#161616] rounded-2xl overflow-hidden border border-gray-200 dark:border-white/5 hover:border-blue-500/30 dark:hover:border-white/10 transition-all duration-300 hover:-translate-y-2 shadow-xl shadow-gray-200/50 dark:shadow-none flex flex-col">
                             {/* Preview Image */}
                             {project.preview && (
-                                <div className="relative h-48 overflow-hidden">
+                                <div className="relative h-48 overflow-hidden border-b border-gray-100 dark:border-white/5">
                                     <img 
                                         src={project.preview} 
                                         alt={project.title} 
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                                        <span className="text-white text-xs font-medium px-2 py-1 bg-white/20 backdrop-blur-md rounded-md">Preview Available</span>
-                                    </div>
                                 </div>
                             )}
 

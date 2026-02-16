@@ -27,14 +27,14 @@ const About = () => {
                             I focus on delivering high-performance Single Page Applications (SPAs) that integrate Python's data ecosystem with modern JavaScript frameworks. My goal is to transform complex datasets into functional, production-ready digital products.
                         </p>
 
-                        <div className="flex gap-4">
-                            <div className="px-6 py-4 bg-white dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 text-center shadow-sm dark:shadow-none">
-                                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">12+</div>
-                                <div className="text-sm text-gray-500 uppercase tracking-wider">Repos</div>
+                        <div className="flex gap-12 mt-4">
+                            <div>
+                                <div className="text-4xl font-bold text-gray-900 dark:text-white mb-1">12+</div>
+                                <div className="text-xs text-gray-500 uppercase tracking-widest font-semibold">Repositories</div>
                             </div>
-                            <div className="px-6 py-4 bg-white dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 text-center shadow-sm dark:shadow-none">
-                                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">Top</div>
-                                <div className="text-sm text-gray-500 uppercase tracking-wider">Pull Shark</div>
+                            <div>
+                                <div className="text-4xl font-bold text-gray-900 dark:text-white mb-1">Top</div>
+                                <div className="text-xs text-gray-500 uppercase tracking-widest font-semibold">Pull Shark</div>
                             </div>
                         </div>
                     </div>

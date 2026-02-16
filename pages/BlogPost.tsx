@@ -34,8 +34,15 @@ import remarkGfm from 'remark-gfm';
 
 const BlogPost = () => {
     const { slug } = useParams<{ slug: string }>();
-    const fileName = `../posts/${slug}.md`;
-    const rawContent = postFiles[fileName];
+    
+    // Clean slug and find the matching file
+    const cleanSlug = slug?.replace(/\/$/, '') || '';
+    const matchingPath = Object.keys(postFiles).find(path => 
+        path.toLowerCase().endsWith(`/${cleanSlug}.md`) || 
+        path.toLowerCase().endsWith(`${cleanSlug}.md`)
+    );
+    
+    const rawContent = matchingPath ? postFiles[matchingPath] : null;
 
     if (!rawContent) {
         return <Navigate to="/blog" replace />;

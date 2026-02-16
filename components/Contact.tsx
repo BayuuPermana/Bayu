@@ -11,7 +11,7 @@ const Contact = () => {
                 </p>
 
                 <div className="flex flex-col md:flex-row justify-center gap-6 mb-16">
-                    <a href="mailto:exp.bayupermana@gmail.com" className="flex items-center justify-center gap-3 px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-full font-bold transition-all shadow-lg shadow-green-200 dark:shadow-none">
+                    <a href="mailto:exp.bayupermana@gmail.com" className="flex items-center justify-center gap-3 px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-full font-bold transition-all shadow-sm">
                         <Mail size={20} />
                         Send me an Email
                     </a>
