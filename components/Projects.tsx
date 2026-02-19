@@ -2,6 +2,7 @@ import React from 'react';
 import { ExternalLink, Wallet, Users, Droplets, Layout, Github } from 'lucide-react';
 import baritoImage from './img/barito.png';
 import waterImage from './img/Water.png';
+import fintrackImage from './img/fintrack.png';
 
 
 const Projects = () => {
@@ -9,7 +10,7 @@ const Projects = () => {
         {
             title: "Barito",
             description: "Proposal and project management platform built for streamlined deliverable tracking. Implements a responsive interface for managing stakeholder communications and project lifecycle.",
-            tags: ["React", "TypeScript", "Tailwind"],
+            tags: ["React", "TypeScript", "Tailwind", "Bun"],
             icon: <Layout className="w-8 h-8 text-purple-600 dark:text-purple-400" />,
             color: "from-purple-500/10 dark:from-purple-500/20 to-indigo-500/5",
             repoUrl: "https://github.com/BayuuPermana/barito",
@@ -19,15 +20,16 @@ const Projects = () => {
         {
             title: "FinTrack",
             description: "Expense tracking and budget forecasting engine. Built with React and Node.js to provide automated financial reporting and data-driven budget insights.",
-            tags: ["React", "Node.js", "MongoDB", "Finance"],
+            tags: ["React", "Bun", "MongoDB", "Finance"],
             icon: <Wallet className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />,
             color: "from-emerald-500/10 dark:from-emerald-500/20 to-teal-500/5",
-            repoUrl: "https://github.com/BayuuPermana/fintrack"
+            repoUrl: "https://github.com/BayuuPermana/fintrack",
+            preview: fintrackImage   
         },
         {
             title: "Emp-Dash",
             description: "Workforce analytics dashboard designed for HR automation. Integrates attendance tracking and performance metrics into a unified visualization interface.",
-            tags: ["Vue.js", "Data Viz", "Management"],
+            tags: ["Vue.js", "Data Viz", "Management", "Bun"],
             icon: <Users className="w-8 h-8 text-blue-600 dark:text-blue-400" />,
             color: "from-blue-500/10 dark:from-blue-500/20 to-cyan-500/5",
             repoUrl: "https://github.com/BayuuPermana/emp-dash"
