@@ -11,9 +11,10 @@ import { scrollToSection } from '../utils/scroll';
 const Home = () => {
     return (
         <main>
-            <SEO 
-                title="Home" 
-                description="Bayu Permana - Data Systems Engineer & Full-Stack Developer portfolio." 
+            <SEO
+                title="Home"
+                description="Bayu Permana - Data Systems Engineer & Full-Stack Developer portfolio."
+                tags={['Portfolio', 'Software Engineer', 'Data Systems', 'Full-Stack Developer', 'React', 'TypeScript', 'Python']}
             />
             <SectionHUD />
             <Hero scrollToSection={scrollToSection} />

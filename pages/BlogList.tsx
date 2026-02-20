@@ -18,7 +18,7 @@ interface PostMetadata {
 const parseFrontmatter = (content: string) => {
     const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
     if (!match) return { data: {}, content };
-    
+
     const yaml = match[1] || '';
     const data: any = {};
     yaml.split('\n').forEach(line => {
@@ -35,7 +35,7 @@ const parseFrontmatter = (content: string) => {
             }
         }
     });
-    
+
     return { data, content: content.replace(match[0], '').trim() };
 };
 
@@ -65,9 +65,9 @@ const BlogList = () => {
 
     return (
         <div className="min-h-screen pt-24 pb-12 px-6">
-            <SEO 
-                title="Blog" 
-                description="Thoughts, tutorials, and other digital artifacts from Bayu Permana." 
+            <SEO
+                title="Blog"
+                description="Thoughts, tutorials, and other digital artifacts from Bayu Permana."
                 slug="blog"
             />
             <div className="container mx-auto max-w-4xl">
@@ -89,7 +89,7 @@ const BlogList = () => {
                             className="w-full pl-12 pr-10 py-3 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 focus:border-green-500/50 dark:focus:border-green-400/50 outline-none transition-all duration-300"
                         />
                         {searchQuery && (
-                            <button 
+                            <button
                                 onClick={() => setSearchQuery('')}
                                 className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 text-gray-400 transition-colors"
                             >
@@ -108,7 +108,7 @@ const BlogList = () => {
                 ) : (
                     <div className="grid gap-8">
                         {filteredPosts.map((post) => (
-                            <article 
+                            <article
                                 key={post.slug}
                                 className="group p-6 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-green-500/50 dark:hover:border-green-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/5"
                             >
@@ -130,7 +130,7 @@ const BlogList = () => {
                                     </p>
                                     <div className="flex flex-wrap gap-2">
                                         {post.tags?.map(tag => (
-                                            <span 
+                                            <span
                                                 key={tag}
                                                 className="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400"
                                             >
@@ -148,4 +148,5 @@ const BlogList = () => {
     );
 };
 
+export const Component = BlogList;
 export default BlogList;

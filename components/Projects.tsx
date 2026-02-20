@@ -24,7 +24,7 @@ const Projects = () => {
             icon: <Wallet className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />,
             color: "from-emerald-500/10 dark:from-emerald-500/20 to-teal-500/5",
             repoUrl: "https://github.com/BayuuPermana/fintrack",
-            preview: fintrackImage   
+            preview: fintrackImage
         },
         {
             title: "Emp-Dash",
@@ -41,7 +41,7 @@ const Projects = () => {
             icon: <Droplets className="w-8 h-8 text-cyan-600 dark:text-cyan-400" />,
             color: "from-cyan-500/10 dark:from-cyan-500/20 to-blue-500/5",
             repoUrl: "https://github.com/BayuuPermana/waterMonitoring",
-            preview: waterImage 
+            preview: waterImage
 
         }
     ];
@@ -67,9 +67,9 @@ const Projects = () => {
                             {/* Preview Image */}
                             {project.preview && (
                                 <div className="relative h-48 overflow-hidden border-b border-gray-100 dark:border-white/5">
-                                    <img 
-                                        src={project.preview} 
-                                        alt={project.title} 
+                                    <img
+                                        src={project.preview}
+                                        alt={`Screenshot of ${project.title} — ${project.description.split('.')[0]}`}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                     />
                                 </div>

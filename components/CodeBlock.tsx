@@ -16,6 +16,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ children, className }) => {
     const language = match ? match[1] : '';
 
     const onCopy = () => {
+        if (typeof navigator === 'undefined') return;
         const text = String(children).replace(/\n$/, '');
         navigator.clipboard.writeText(text).then(() => {
             setCopied(true);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { ChevronLeft, Calendar, Tag } from 'lucide-react';
 import CodeBlock from '../components/CodeBlock';
@@ -34,18 +34,24 @@ import remarkGfm from 'remark-gfm';
 
 const BlogPost = () => {
     const { slug } = useParams<{ slug: string }>();
-    
+
     // Clean slug and find the matching file
     const cleanSlug = slug?.replace(/\/$/, '') || '';
-    const matchingPath = Object.keys(postFiles).find(path => 
-        path.toLowerCase().endsWith(`/${cleanSlug}.md`) || 
+    const matchingPath = Object.keys(postFiles).find(path =>
+        path.toLowerCase().endsWith(`/${cleanSlug}.md`) ||
         path.toLowerCase().endsWith(`${cleanSlug}.md`)
     );
-    
+
     const rawContent = matchingPath ? postFiles[matchingPath] : null;
 
     if (!rawContent) {
-        return <Navigate to="/blog" replace />;
+        return (
+            <div className="min-h-screen pt-24 pb-20 px-6">
+                <div className="container mx-auto max-w-3xl text-center text-gray-500">
+                    Post not found. <Link to="/blog" className="text-green-500 hover:underline">Back to blog</Link>
+                </div>
+            </div>
+        );
     }
 
     const { data, content } = parseFrontmatter(rawContent as string);
@@ -153,5 +159,14 @@ const BlogPost = () => {
         </div>
     );
 };
+
+export const Component = BlogPost;
+
+export function getStaticPaths() {
+    return Object.keys(postFiles).map(path => {
+        const slug = path.split('/').pop()?.replace('.md', '') || '';
+        return slug;
+    }).filter(Boolean);
+}
 
 export default BlogPost;

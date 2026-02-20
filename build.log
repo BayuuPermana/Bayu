@@ -1,0 +1,31 @@
+
+> build
+> vite-react-ssg build
+
+
+[vite-react-ssg] Build for client...
+[36mvite v7.2.2 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32m✓[39m 2815 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                    [39m[1m[2m    0.87 kB[22m[1m[22m[2m │ gzip:   0.43 kB[22m
+[2mdist/[22m[32m.vite/manifest.json           [39m[1m[2m    0.89 kB[22m[1m[22m[2m │ gzip:   0.30 kB[22m
+[2mdist/[22m[32m.vite/ssr-manifest.json       [39m[1m[2m  110.78 kB[22m[1m[22m[2m │ gzip:   4.65 kB[22m
+[2mdist/[22m[32massets/fintrack-Bj-Wld1c.png  [39m[1m[2m  213.70 kB[22m[1m[22m
+[2mdist/[22m[32massets/Water-DDu4w3t1.png     [39m[1m[2m  296.76 kB[22m[1m[22m
+[2mdist/[22m[32massets/barito-Du_JYD94.png    [39m[1m[2m  705.67 kB[22m[1m[22m
+[2mdist/[22m[35massets/app-wGoEwk5J.css       [39m[1m[2m   64.62 kB[22m[1m[22m[2m │ gzip:   9.58 kB[22m
+[2mdist/[22m[36massets/client-D5icrg_-.js     [39m[1m[2m    0.58 kB[22m[1m[22m[2m │ gzip:   0.39 kB[22m
+[2mdist/[22m[36massets/app-AlT1kYyX.js        [39m[1m[33m1,091.88 kB[39m[22m[2m │ gzip: 374.73 kB[22m
+[33m
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+[32m✓ built in 6.38s[39m
+
+[vite-react-ssg] Build for server...
+[36mvite v7.2.2 [32mbuilding ssr environment for production...[36m[39m
+transforming...
+Terminate batch job (Y/N)? Terminate batch job (Y/N)? 

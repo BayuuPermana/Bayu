@@ -8,10 +8,14 @@
     "@types/react-dom": "18",
     "@vitejs/plugin-react": "^5.1.1",
     "autoprefixer": "^10.4.22",
+    "baseline-browser-mapping": "^2.10.0",
+    "beasties": "^0.4.1",
     "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.17",
-    "vite": "^7.2.2"
+    "vite": "^7.2.2",
+    "vite-plugin-sitemap": "^0.8.2",
+    "vite-react-ssg": "^0.9.1-beta.1"
   },
   "peerDependencies": {
     "typescript": "^5"
@@ -20,7 +24,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite-react-ssg build",
     "preview": "vite preview",
     "predeploy": "bun run build",
     "deploy": "gh-pages -d dist"
@@ -34,7 +38,7 @@
     "react": "18",
     "react-dom": "18",
     "react-markdown": "^10.1.0",
-    "react-router-dom": "^7.13.0",
+    "react-router-dom": "6.28.2",
     "react-syntax-highlighter": "^16.1.0",
     "remark-gfm": "^4.0.1"
   }
