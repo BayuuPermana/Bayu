@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bayuupermana.github.io/Bayu/sitemap.xml
