@@ -73,6 +73,12 @@ Bayu/
 │   ├── Home.tsx          # Portfolio sections
 │   ├── BlogList.tsx      # Blog index with search
 │   └── BlogPost.tsx      # Dynamic blog post renderer + getStaticPaths
+├── hooks/                # Custom React hooks
+│   ├── useTheme.ts       # Theme switching logic
+│   └── useScrollToHash.ts# Hash routing and scroll behavior
+├── utils/                # Utility functions
+│   ├── posts.ts          # Centralized blog post loading & custom frontmatter parser
+│   └── scroll.ts         # Scrolling utilities
 ├── components/
 │   ├── SEO.tsx           # <Head /> meta tags + JSON-LD schemas
 │   ├── CodeBlock.tsx     # Syntax-highlighted code blocks

@@ -4,47 +4,15 @@ import ReactMarkdown from 'react-markdown';
 import { ChevronLeft, Calendar, Tag } from 'lucide-react';
 import CodeBlock from '../components/CodeBlock';
 import SEO from '../components/SEO';
-
-// Use Vite's build-time globbing
-const postFiles = import.meta.glob('../posts/*.md', { query: '?raw', eager: true, import: 'default' });
-
-const parseFrontmatter = (content: string) => {
-    const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-    if (!match) return { data: {}, content };
-
-    const yaml = match[1] || '';
-    const data: any = {};
-    yaml.split('\n').forEach(line => {
-        const [key, ...valueParts] = line.split(':');
-        if (key && valueParts.length > 0) {
-            let value = valueParts.join(':').trim();
-            value = value.replace(/^["'](.*)["']$/, '$1');
-            if (value.startsWith('[') && value.endsWith(']')) {
-                data[key.trim()] = value.slice(1, -1).split(',').map(v => v.trim().replace(/^["'](.*)["']$/, '$1'));
-            } else {
-                data[key.trim()] = value;
-            }
-        }
-    });
-
-    return { data, content: content.replace(match[0], '').trim() };
-};
-
+import { getPostBySlug, getAllPostSlugs } from '../utils/posts';
 import remarkGfm from 'remark-gfm';
 
 const BlogPost = () => {
     const { slug } = useParams<{ slug: string }>();
 
-    // Clean slug and find the matching file
-    const cleanSlug = slug?.replace(/\/$/, '') || '';
-    const matchingPath = Object.keys(postFiles).find(path =>
-        path.toLowerCase().endsWith(`/${cleanSlug}.md`) ||
-        path.toLowerCase().endsWith(`${cleanSlug}.md`)
-    );
+    const post = getPostBySlug(slug || '');
 
-    const rawContent = matchingPath ? postFiles[matchingPath] : null;
-
-    if (!rawContent) {
+    if (!post) {
         return (
             <div className="min-h-screen pt-24 pb-20 px-6">
                 <div className="container mx-auto max-w-3xl text-center text-gray-500">
@@ -54,7 +22,7 @@ const BlogPost = () => {
         );
     }
 
-    const { data, content } = parseFrontmatter(rawContent as string);
+    const { data, content } = post;
 
     return (
         <div className="min-h-screen pt-24 pb-20 px-6">
@@ -163,10 +131,7 @@ const BlogPost = () => {
 export const Component = BlogPost;
 
 export function getStaticPaths() {
-    return Object.keys(postFiles).map(path => {
-        const slug = path.split('/').pop()?.replace('.md', '') || '';
-        return slug;
-    }).filter(Boolean);
+    return getAllPostSlugs();
 }
 
 export default BlogPost;

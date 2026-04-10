@@ -4,11 +4,7 @@ import App from './App';
 import Home from './pages/Home';
 import BlogList from './pages/BlogList';
 import BlogPost from './pages/BlogPost';
-
-const postFiles = import.meta.glob('./posts/*.md', { query: '?raw', eager: true });
-const blogSlugs = Object.keys(postFiles).map(path =>
-    path.split('/').pop()?.replace('.md', '') || ''
-).filter(Boolean);
+import { getAllPostSlugs } from './utils/posts';
 
 export const routes: RouteRecord[] = [
     {
@@ -27,7 +23,7 @@ export const routes: RouteRecord[] = [
                 path: 'blog/:slug',
                 element: <BlogPost />,
                 entry: 'pages/BlogPost.tsx',
-                getStaticPaths: () => blogSlugs.map(s => `blog/${s}`),
+                getStaticPaths: () => getAllPostSlugs().map(s => `blog/${s}`),
             },
         ]
     }

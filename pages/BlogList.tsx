@@ -2,64 +2,18 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, X } from 'lucide-react';
 import SEO from '../components/SEO';
-
-// Use Vite's build-time globbing. Eager loading ensures they are bundled.
-const postFiles = import.meta.glob('../posts/*.md', { query: '?raw', eager: true, import: 'default' });
-
-interface PostMetadata {
-    title: string;
-    date: string;
-    description: string;
-    tags: string[];
-    slug: string;
-}
-
-// Custom high-performance Frontmatter parser because gray-matter is for Jerries
-const parseFrontmatter = (content: string) => {
-    const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-    if (!match) return { data: {}, content };
-
-    const yaml = match[1] || '';
-    const data: any = {};
-    yaml.split('\n').forEach(line => {
-        const [key, ...valueParts] = line.split(':');
-        if (key && valueParts.length > 0) {
-            let value = valueParts.join(':').trim();
-            // Remove quotes if present
-            value = value.replace(/^["'](.*)["']$/, '$1');
-            // Handle arrays like ["a", "b"]
-            if (value.startsWith('[') && value.endsWith(']')) {
-                data[key.trim()] = value.slice(1, -1).split(',').map(v => v.trim().replace(/^["'](.*)["']$/, '$1'));
-            } else {
-                data[key.trim()] = value;
-            }
-        }
-    });
-
-    return { data, content: content.replace(match[0], '').trim() };
-};
+import { getAllPosts } from '../utils/posts';
 
 const BlogList = () => {
     const [searchQuery, setSearchQuery] = useState('');
-
-    const allPosts: PostMetadata[] = Object.entries(postFiles).map(([path, content]) => {
-        const { data } = parseFrontmatter(content as string);
-        const slug = path.split('/').pop()?.replace('.md', '') || '';
-        return {
-            title: data.title || 'Untitled',
-            date: data.date || '2026-01-01',
-            description: data.description || '',
-            tags: data.tags || [],
-            slug,
-        };
-    }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    const allPosts = getAllPosts();
 
     const filteredPosts = allPosts.filter(post => {
         const query = searchQuery.toLowerCase();
         return (
-            post.title.toLowerCase().includes(query) ||
-            post.description.toLowerCase().includes(query) ||
-            post.tags.some(tag => tag.toLowerCase().includes(query))
+            post.data.title.toLowerCase().includes(query) ||
+            post.data.description.toLowerCase().includes(query) ||
+            post.data.tags.some(tag => tag.toLowerCase().includes(query))
         );
     });
 
@@ -115,10 +69,10 @@ const BlogList = () => {
                                 <Link to={`/blog/${post.slug}`} className="block">
                                     <div className="flex justify-between items-start mb-2">
                                         <h2 className="text-2xl font-bold group-hover:text-green-500 dark:group-hover:text-green-400 transition-colors">
-                                            {post.title}
+                                            {post.data.title}
                                         </h2>
                                         <time className="text-sm text-gray-500 dark:text-gray-500 whitespace-nowrap">
-                                            {new Date(post.date).toLocaleDateString('en-US', {
+                                            {new Date(post.data.date).toLocaleDateString('en-US', {
                                                 year: 'numeric',
                                                 month: 'long',
                                                 day: 'numeric'
@@ -126,10 +80,10 @@ const BlogList = () => {
                                         </time>
                                     </div>
                                     <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
-                                        {post.description}
+                                        {post.data.description}
                                     </p>
                                     <div className="flex flex-wrap gap-2">
-                                        {post.tags?.map(tag => (
+                                        {post.data.tags?.map(tag => (
                                             <span
                                                 key={tag}
                                                 className="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400"
